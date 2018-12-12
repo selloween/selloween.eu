@@ -1,0 +1,26 @@
+baseurl = "https://example.org/"
+languageCode = "en-us"
+title = "Hello Friend"
+theme = "hugo-theme-hello-friend"
+copyright = ""
+paginate = 5
+
+[params]
+  subtitle = "A simple theme for Hugo"
+
+[params.logo]
+  logoText = "hello friend"
+#   or
+#
+#   path = "/img/your-example-logo.svg"
+#   alt = "Your example logo alt text"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+  [[menu.main]]
+    identifier = "showcase"
+    name = "Showcase"
+    url = "/showcase"

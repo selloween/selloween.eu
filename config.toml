@@ -1,0 +1,24 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+theme = "hello-friend"
+title = "binarize.io"
+name = "binarize.io"
+copyright = ""
+paginate = 5
+
+[params]
+  subtitle = "Your site subtitle"
+
+[params.logo]
+  logoText = "binarize.io"
+#   or
+#
+#   path = "/img/your-example-logo.svg"
+#   alt = ""
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "#About"
+    url = "/about"
+
