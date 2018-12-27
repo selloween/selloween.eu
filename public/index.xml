@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>binarize.io</title>
+    <link>http://example.org/</link>
+    <description>Recent content on binarize.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to install i3 on Debian 9</title>
+      <link>http://example.org/post/hello/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/hello/</guid>
+      <description>Debian network install Requirements  AMD64(x86-64) based processor Ethernet cable plus a stable internet connection USB drive with a minimum of 300MB disk space  Download the image Download the network install image from here: https://www.debian.org/devel/debian-installer/ Be sure to download the netinstaller image for AMD64 systems.
+Create a bootable USB drive On Windows Download Rufus: https://rufus.ie
+On Linux Open a terminal and use &amp;ldquo;fdisk&amp;rdquo;
+$ sudo fdisk -l  Identify the correct disk name according to the naming pattern of &amp;ldquo;/dev/sdx&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Hello Friend</title>
+      <link>http://example.org/post/hello.1/</link>
+      <pubDate>Wed, 17 Sep 1986 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/hello.1/</guid>
+      <description> &amp;ldquo;Hello, friend?&amp;rdquo; That&amp;rsquo;s lame. Maybe I should give you a name&amp;hellip;
+But that&amp;rsquo;s a slippery slope.
+You&amp;rsquo;re only in my head.
+We have to remember that&amp;hellip;
+Shit.
+It&amp;rsquo;s actually happened.
+I&amp;rsquo;m talking to an imaginary person.
+— Mr. Robot S01E01
+ </description>
+    </item>
+    
+  </channel>
+</rss>

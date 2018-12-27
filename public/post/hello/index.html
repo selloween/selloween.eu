@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>How to install i3 on Debian 9 :: binarize.io — Your site subtitle</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://example.org/post/hello/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/style.css">
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to install i3 on Debian 9 :: binarize.io — Your site subtitle" />
+<meta name="twitter:description" content="Debian network install Requirements  AMD64(x86-64) based processor Ethernet cable plus a stable internet connection USB drive with a minimum of 300MB disk space  Download the image Download the network install image from here: https://www.debian.org/devel/debian-installer/ Be sure to download the netinstaller image for AMD64 systems.
+Create a bootable USB drive On Windows Download Rufus: https://rufus.ie
+On Linux Open a terminal and use &amp;ldquo;fdisk&amp;rdquo;
+$ sudo fdisk -l  Identify the correct disk name according to the naming pattern of &amp;ldquo;/dev/sdx&amp;rdquo;." />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="http://example.org/img/post/hello.png">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to install i3 on Debian 9 :: binarize.io — Your site subtitle">
+<meta property="og:description" content="" />
+<meta property="og:url" content="http://example.org/post/hello/" />
+<meta property="og:site_name" content="How to install i3 on Debian 9" />
+<meta property="og:image" content="http://example.org/img/post/hello.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2018-12-26 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="http://example.org/" style="text-decoration: none;">
+    <div class="logo">
+      
+        <span class="logo__mark">></span>
+        <span class="logo__text">binarize.io</span>
+        <span class="logo__cursor"></span>
+      
+    </div>
+  </a>
+  
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner">
+    
+      <li><a href="/about">#About</a></li>
+    
+  </ul>
+</nav>
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>        
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="bulb-off" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="20"/>
+    <path d="M4 19C4 19.55 4.45 20 5 20H9C9.55 20 10 19.55 10 19V18H4V19ZM7 0C3.14 0 0 3.14 0 7C0 9.38 1.19 11.47 3 12.74V15C3 15.55 3.45 16 4 16H10C10.55 16 11 15.55 11 15V12.74C12.81 11.47 14 9.38 14 7C14 3.14 10.86 0 7 0ZM9.85 11.1L9 11.7V14H5V11.7L4.15 11.1C2.8 10.16 2 8.63 2 7C2 4.24 4.24 2 7 2C9.76 2 12 4.24 12 7C12 8.63 11.2 10.16 9.85 11.1Z" transform="translate(5 2)" fill="black"/>
+</svg>
+  
+  <svg class="bulb-on" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="20"/>
+    <path class="bulb-on__base" d="M4 19C4 19.55 4.45 20 5 20H9C9.55 20 10 19.55 10 19V18H4V19Z" transform="translate(5 2)" fill="#a9a9b3" />
+    <path class="bulb-on__glass" d="M0 7C0 3.14 3.14 0 7 0C10.86 0 14 3.14 14 7C14 9.38 12.81 11.47 11 12.74V15C11 15.55 10.55 16 10 16H4C3.45 16 3 15.55 3 15V12.74C1.19 11.47 0 9.38 0 7Z" transform="translate(5 2)" fill="#a9a9b3" />
+  </svg>
+    
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="http://example.org/post/hello/">How to install i3 on Debian 9</a></h2>
+    <div class="post-meta">
+      <span class="post-date">
+        2018-12-26
+      </span>
+      <span class="post-author">Written by Selwyn</span>
+    </div>
+
+    
+
+    
+      <img src="/img/hello.png" class="post-cover" />
+    
+
+    <div class="post-content">
+      
+
+<h2 id="debian-network-install">Debian network install</h2>
+
+<h3 id="requirements">Requirements</h3>
+
+<ul>
+<li>AMD64(x86-64) based processor</li>
+<li>Ethernet cable plus  a stable internet connection</li>
+<li>USB drive with a minimum of 300MB disk space</li>
+</ul>
+
+<h3 id="download-the-image">Download the image</h3>
+
+<p>Download the network install image from here: <a href="https://www.debian.org/devel/debian-installer/">https://www.debian.org/devel/debian-installer/</a>
+Be sure to download the netinstaller image for AMD64 systems.</p>
+
+<h3 id="create-a-bootable-usb-drive">Create a bootable USB drive</h3>
+
+<h4 id="on-windows">On Windows</h4>
+
+<p>Download Rufus: <a href="https://rufus.ie">https://rufus.ie</a></p>
+
+<h4 id="on-linux">On Linux</h4>
+
+<p>Open a terminal and use &ldquo;fdisk&rdquo;</p>
+
+<pre><code class="language-bash">$ sudo fdisk -l
+</code></pre>
+
+<p>Identify the correct disk name according to the naming pattern of
+&ldquo;/dev/sdx&rdquo;. In the example below the disk name is &ldquo;/dev/sdb&rdquo;.</p>
+
+<pre><code>Device     Start       End   Sectors   Size Type
+/dev/sdb1   2048 240252927 240250880 114.6G Microsoft basic data
+</code></pre>
+
+<h5 id="flash-the-drive">Flash the drive</h5>
+
+<p>Use the &ldquo;dd&rdquo; command to flash the usb drive</p>
+
+<pre><code class="language-bash">$ sudo dd bs=4M if=debian-9.6.0-amd64-netinst.iso of=/dev/sdx status=progress conv=fsync
+</code></pre>
+
+<h2 id="base-installation">Base installation</h2>
+
+<p>Restart and before the welcome screen appears press &ldquo;Enter&rdquo; or &ldquo;F12&rdquo; - the key might
+vary depending on your hardware manufacturer. In the boot options menu choose to boot from USB.</p>
+
+<h3 id="graphical-installation">Graphical Installation</h3>
+
+<p>On the main Debian installation screen choose graphical installation.</p>
+
+<p><img src="/static/img/hello.png" alt="hello" /></p>
+
+<h3 id="post-installation">Post installation</h3>
+
+<p>After you login for the first time switch to root and enter the password when
+prompted. (Don&rsquo;t forget appending &ldquo; -&rdquo; after &ldquo;su&rdquo;)</p>
+
+<pre><code class="language-bash">$ su -
+</code></pre>
+
+<h4 id="update-system">Update system</h4>
+
+<pre><code class="language-bash"># apt-get update &amp;&amp; apt-get upgrade
+</code></pre>
+
+<h4 id="install-sudo">Install sudo</h4>
+
+<pre><code class="language-bash"># apt get install sudo
+</code></pre>
+
+<h4 id="add-user-to-sudo-group">Add user to sudo group</h4>
+
+<p>The user must be added to the sudo group to have sudo privileges.</p>
+
+<pre><code class="language-bash"># usermod -aG sudo username
+</code></pre>
+
+<p>Switch back to user</p>
+
+<pre><code class="language-bash"># su username
+</code></pre>
+
+<h2 id="install-a-text-editor-and-git">Install a text editor and git</h2>
+
+<p>One of the most important tools is a text editor. You will need one for the next steps.
+I suggest installing vim, but feel free to install any other. (e.g. nano)</p>
+
+<pre><code class="language-bash">$ sudo apt-get install vim
+</code></pre>
+
+<h2 id="adding-non-free-and-contribution-repositories">Adding non-free and contribution repositories</h2>
+
+<p>If you want to install certain common software such as Chromium, Firefox etc. you need to
+add them to the &ldquo;sources.list&rdquo;. Depending on your hardware you might need proprietary firmware for
+e.g. WiFi to function.</p>
+
+<pre><code class="language-bash">$ sudo vim /etc/apt/sources.list
+</code></pre>
+
+<p>Adjust the entries according to the example:</p>
+
+<pre><code>deb http://site.example.com/debian stretch main contrib non-free
+deb-src http://site.example.com/debian stretch main contrib non-free
+</code></pre>
+
+<p>Update packages</p>
+
+<pre><code class="language-bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+
+<p>More info on sources list: <a href="https://wiki.debian.org/SourcesList">https://wiki.debian.org/SourcesList</a></p>
+
+<h2 id="upgrade-to-debian-testing-or-debian-sid">Upgrade to Debian Testing or Debian Sid</h2>
+
+<p>Here would be a good point to upgrade to &ldquo;Debian Testing&rdquo; or &ldquo;Debian Sid&rdquo; if you wanted to.
+I have written a seperate guide on how to do this here:
+This step is optional and can be done later on.</p>
+
+<h2 id="network-management">Network management</h2>
+
+<h3 id="install-network-manager">Install Network Manager</h3>
+
+<pre><code class="language-bash">$ sudo apt-get install network-manager
+</code></pre>
+
+<h3 id="intel-wifi-firmware">Intel WiFi firmware</h3>
+
+<p>To enable support for Intel 802.11n devices on Debian systems you will have to install the intel
+wifi firmware package. Make sure that the non-free option is added to &ldquo;/etc/apt/sources.list&rdquo; as
+shown above.</p>
+
+<pre><code class="language-bash">$ sudo apt-get update &amp;&amp; apt-get install firmware-iwlwifi
+</code></pre>
+
+<h3 id="connect-to-wifi">Connect to WiFi</h3>
+
+<p>Run &ldquo;nmtui&rdquo; and activate a connection (Screenshot)</p>
+
+<pre><code class="language-bash">$ nmtui
+</code></pre>
+
+<p>If you can connect successfully to a WiFi network but can&rsquo;t connect to the internet, you might need
+to reboot.</p>
+
+<h2 id="desktop-installation">Desktop installation</h2>
+
+<h3 id="install-x-server">Install X-Server</h3>
+
+<p>To get i3 running you need to first install Xserver.</p>
+
+<pre><code class="language-bash">sudo apt-get install xorg
+</code></pre>
+
+<h3 id="install-i3-and-dmenu">Install i3 and dmenu</h3>
+
+<p>Now install i3 and dmenu. dmenu is a handy and lightweight  application launcher.</p>
+
+<pre><code class="language-bash">sudo apt-get install i3
+</code></pre>
+
+<p>Note: i3 on Debian  comes prepackaged with &ldquo;suckless tools&rdquo; preinstalled including &ldquo;dmenu&rdquo;, a
+lightweight application launcher, &ldquo;dunst&rdquo;, a notification daemon, and
+&ldquo;i3lock&rdquo;, a simple screen locker. More info on &ldquo;suckless tools&rdquo;: <a href="https://suckless.org/">https://suckless.org/</a></p>
+
+<h3 id="login-managment">Login Managment</h3>
+
+<h3 id="bash-login">Bash Login</h3>
+
+<p>To keep the system as minimal as possible I suggest using the bash login and configuring it so that
+i3 starts after login. If you prefer having a graphical login screen head to the next step.</p>
+
+<pre><code class="language-bash">$ touch  ~/.bash_profile
+</code></pre>
+
+<p>Then add following line by pasting this command</p>
+
+<pre><code class="language-bash">$ printf &quot;if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then\n\texec startx\nfi&quot; ~/.bash_profile
+
+</code></pre>
+
+<h3 id="gui-login-manager">GUI Login Manager</h3>
+
+<p>Instead of the bash login you can install a graphical Login Manager e.g. LightDM</p>
+
+<pre><code class="language-bash">$ sudo apt-get install lightdm
+</code></pre>
+
+<p>After reboot you will be welcomed by a graphical login interface.
+Login and you should be prompted by the config wizard of i3!</p>
+
+<p>Let i3 generate the default config and on the next prompt choose the mod key you want to use.
+(Windows Key or Alt)</p>
+
+<h2 id="get-wifi-working">Get WiFi working</h2>
+
+<p>Depending on your hardware you might need to install additional firmware.
+On my ThinkPad T480s I had to install proprietary firmware to get proper WiFi.</p>
+
+<h2 id="base-installation-1">Base Installation</h2>
+
+<h2 id="update">Update</h2>
+
+<p>Switch to the root user as sudo is not setup yet.
+Type <code>su -</code> and enter the root password.</p>
+
+<pre><code class="language-bash">$ apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+
+<h2 id="text-editor">Text-editor</h2>
+
+<p>Install a text-editor. I suggest using vim but feel free to install any other editor of choice.</p>
+
+<pre><code class="language-bash">$ apt-get install vim
+</code></pre>
+
+<h2 id="sudo">Sudo</h2>
+
+<p>Install sudo</p>
+
+<pre><code class="language-bash">$ apt-get install sudo
+</code></pre>
+
+<p>Add the user to the sudo group.</p>
+
+<pre><code class="language-bash">$ usermod -aG sudo username
+</code></pre>
+
+<p>Leave the root session</p>
+
+<pre><code class="language-bash">$ exit
+</code></pre>
+
+<h2 id="sources-list">Sources List</h2>
+
+<h3 id="non-free-packages">Non-free packages</h3>
+
+<p>Depending on your software needs and hardware you might need non-free packages.</p>
+
+<h4 id="adjust-sources-list">Adjust sources.list</h4>
+
+<p>Add non free-packages repositories by editing the sources list located in &lsquo;/etc/apt/sources.list&rsquo;
+Add the terms &lsquo;contrib&rsquo; and &lsquo;non-free&rsquo; to each source entry according to the example bellow.</p>
+
+<pre><code class="language-bash">$ sudo vim /etc/apt/sources.list
+</code></pre>
+
+<h3 id="debian-testing-optional">Debian Testing (optional)</h3>
+
+<p>Debian testing is the current development state of the next stable Debian distribution.
+More info on Debian Testing: <a href="https://wiki.debian.org/DebianTesting">https://wiki.debian.org/DebianTesting</a></p>
+
+<p>Make sure your current stable version is up to date.</p>
+
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+
+<ul>
+<li>Edit sources.list as mentioned, except replace the distribution name to &lsquo;testing&rsquo; as in example bellow.</li>
+<li>Edit your /etc/apt/sources.list file, changing &lsquo;stable&rsquo; (or the current codename for stable) to &lsquo;testing&rsquo;</li>
+<li>Remove or comment out your stable security updates line(s) (anything with security.debian.org in it).</li>
+
+<li><p>Remove or comment out any other stable-specific lines, like *-backports or *-updates.</p>
+
+<pre><code>deb http://site.example.com/debian sid main contrib non-free
+deb-src http://site.example.com/debian sid main contrib non-free
+</code></pre></li>
+</ul>
+
+<p>Now update and upgrade the distribution</p>
+
+<pre><code>sudo apt-get update &amp; sudo apt-get upgrade
+sudo apt-get dist-upgrade
+</code></pre>
+
+<h3 id="debian-sid-optional">Debian Sid (optional)</h3>
+
+<p>Sid is the unstable branch of Debian and can be compared to a bleeding-edge rolling release distribution.
+Note that using Sid comes with risks as things can break. Do not ever use sid on a server!
+More info on Debian Sid: <a href="https://www.debian.org/releases/sid/">https://www.debian.org/releases/sid/</a></p>
+
+<p>Make sure your current stable version is up to date.</p>
+
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+
+<ul>
+<li>Edit sources.list as mentioned, except replace  the distribution name to &lsquo;sid&rsquo; as in example bellow.</li>
+<li>Edit your /etc/apt/sources.list file, changing &lsquo;stable&rsquo; (or the current codename for stable) to &lsquo;sid&rsquo;</li>
+<li>Remove or comment out your stable security updates line(s) (anything with security.debian.org in it).</li>
+
+<li><p>Remove or comment out any other stable-specific lines, like *-backports or *-updates.</p>
+
+<pre><code>deb http://site.example.com/debian sid main contrib non-free
+deb-src http://site.example.com/debian sid main contrib non-free
+</code></pre></li>
+</ul>
+
+<p>Now update and upgrade the distribution</p>
+
+<pre><code>sudo apt-get update &amp; sudo apt-get upgrade
+sudo apt-get dist-upgrade
+</code></pre>
+
+<h2 id="nonfree-packages">Nonfree packages</h2>
+
+<p>transmission-cli
+udiskie
+intel-microcode
+pcmanfm
+mpv
+htop
+git
+nitrogen
+gparted
+gpart
+arandr
+firefox
+qutebrowser
+ranger
+network-manager
+network-manager-gnome
+firmware-iwlwifi
+exec &ndash;no-startup-id nm-applet
+exec &ndash;no-startup-id nitrogen &ndash;restore
+tlp
+service tlp start
+docker
+docker-compose
+xbacklight</p>
+
+<h1 id="sreen-brightness-controls">Sreen brightness controls</h1>
+
+<p>bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness</p>
+
+<p>acpi
+acpid
+pulseaudio
+compton</p>
+
+<p>/etc/X11/xorg.conf.d/20-intel.conf</p>
+
+<p>Section &ldquo;Device&rdquo;
+    Identifier  &ldquo;Intel Graphics&rdquo;
+    Driver      &ldquo;intel&rdquo;
+    Option      &ldquo;Backlight&rdquo;  &ldquo;intel_backlight&rdquo;
+EndSection</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/backlight#xbacklight">https://wiki.archlinux.org/index.php/backlight#xbacklight</a></p>
+
+<p>reboot</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <a class="btn previous" href="http://example.org/post/hello.1/">Hello Friend →</a>
+           
+        </div>
+      </div>
+    
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+
+    </div>
+  </footer>
+  
+  
+  <script src="/assets/main.js"></script>
+
+  <script src="/assets/prism.js"></script>
+
+
+  
+</div>
+
+</body>
+</html>
