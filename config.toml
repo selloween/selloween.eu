@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://binarize.io"
 languageCode = "en-us"
 theme = "hello-friend"
 title = "binarize.io"
@@ -7,7 +7,7 @@ copyright = ""
 paginate = 5
 
 [params]
-  subtitle = "Your site subtitle"
+  subtitle = "A DevOps Engineer's Blog"
 
 [params.logo]
   logoText = "binarize.io"
@@ -16,9 +16,9 @@ paginate = 5
 #   path = "/img/your-example-logo.svg"
 #   alt = ""
 
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "#About"
-    url = "/about"
+#[menu]
+#  [[menu.main]]
+#    identifier = "about"
+#    name = "#About"
+#    url = "/about"
 
