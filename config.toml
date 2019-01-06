@@ -21,5 +21,3 @@ paginate = 5
 #    identifier = "about"
 #    name = "#About"
 #    url = "/about"
-
-DisqusShortname = "https://binarize-io.disqus.com"
