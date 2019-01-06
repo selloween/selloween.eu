@@ -1,5 +1,6 @@
 +++
 title = "How to create a bootable USB flash drive on Linux"
+disqus_title="How to create a bootable USB flash drive on Linux"
 date = "2019-01-03"
 author = "Selwyn Rogers"
 cover = ""
