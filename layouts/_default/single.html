@@ -22,10 +22,6 @@
 
     <div class="post-content">
       {{ .Content }}
-    </br/> 
-    <br/>
-    {{ partial "disqus.html" . }}
-    
     </div>
     {{ if or .NextInSection .PrevInSection }}
       <div class="pagination">
