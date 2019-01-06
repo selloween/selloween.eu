@@ -24,7 +24,7 @@
       {{ .Content }}
     </br/> 
     <br/>
-    {{ template "_internal/disqus.html" . }}
+    {{ partial "disqus.html" . }}
     
     </div>
     {{ if or .NextInSection .PrevInSection }}
