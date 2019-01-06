@@ -22,4 +22,4 @@ paginate = 5
 #    name = "#About"
 #    url = "/about"
 
-disqusShortname = "https://binarize-io.disqus.com"
+DisqusShortname = "https://binarize-io.disqus.com"
