@@ -21,3 +21,8 @@ paginate = 5
 #    identifier = "about"
 #    name = "#About"
 #    url = "/about"
+
+disqusShortname = "binarize-io"
+disqus_identifier = "{{ .Permalink }}"
+disqus_title = "{{ .Title | markdownify }}"
+disqus_ulr = "{{ .Permalink }}"
