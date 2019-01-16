@@ -51,8 +51,6 @@ vary depending on your hardware manufacturer. In the boot options menu choose bo
 ### Graphical Installation
 On the main Debian installation screen choose graphical installation.
 
-![Debian Graphical Installation](/img/posts/2018/12/26/01-debian-graphical-install.png)
-
 ### Post installation
 After you login for the first time switch to root and enter the password when
 prompted. (Don't forget appending " -" after "su")
