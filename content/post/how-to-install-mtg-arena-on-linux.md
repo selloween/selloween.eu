@@ -1,10 +1,10 @@
 +++
-title = "How to install Magic the Gathering Arena on Linux"
+title = "How to install Magic the Gathering Arena on Debian Stretch"
 date = "2019-01-16"
 author = "Selwyn"
 cover = "mtg-arena-on-linux.png"
 draft = "false"
-description = "A tutorial on how to install MTG Arena on Linux using PlayOnLinux. "
+description = "A tutorial on how to install MTG Arena on Linux Debain 9 using PlayOnLinux. "
 +++
 
 
@@ -20,21 +20,9 @@ PlayOnLinux is a graphical frontend for Wine with which you can install Windows 
 First download MTG Arena Windows executable from the official website: [https://magic.wizards.com/en/mtgarena](https://magic.wizards.com/en/mtgarena) 
 
 
-## Install PlayOnLinux
+## Install PlayOnLinux on Debian 9
 
-### Ubuntu 18.04 and 18.10
-
-PlayOnLinux is in included in the official Ubuntu repositories. You can install it either via the Ubuntu software manager or use the terminal.
-
-* Update system packages:
-
-	`sudo apt-get update && sudo apt-get upgrade`
-
-* Install PlayOnLinux:
-
-	`sudo apt-get install playonlinux`
 	
-### Debian Stretch
 On Debian Stretch you have to add the contribution repository by adding it to `/etc/apt/sources.list`.
 
 * Edit `/etc/apt/sources.list` with the text editor of choice. Make sure to add `contrib`to each source entry as demonstrated below.
@@ -54,11 +42,10 @@ deb-src http://deb.debian.org/debian/ stretch main non-free contrib
 	
 ### Other Linux distributions
 
-PlayOnLinux packages are available for several Linux distributions including Arch Linux and Fedora.
+PlayOnLinux packages are available for several Linux distributions including Ubuntu, Arch Linux and Fedora.
 You can download the appropiate package here:   [https://www.playonlinux.com/en/download.html](https://www.playonlinux.com/en/download.html) or clone the git repository for the latest development version and build from source.
 
 `git clone https://github.com/PlayOnLinux/POL-POM-4`
-
 
 ## Installation
 
@@ -66,9 +53,7 @@ You can download the appropiate package here:   [https://www.playonlinux.com/en/
 
 ### Manage Wine Versions
 
-First install the newest Wine version available. As of now this is version 3.2.
-<br/>
-
+* First nagigate to  `Tools`tab  in the top menu bar and select `Manage Wine Versions`
 
 ![](/img/playonlinux_00.png) 
 
@@ -136,9 +121,10 @@ Now we will create the Windows virtual drive and install Magic the Gathering Are
 
 ![](/img/playonlinux_11.png)    
 
-* When Wine configuration windows appears,  navigate to the  `Libraries` tab and select `d3dx11_43` to install DirectX 11.
-
-* Click on `Add` and then on `Apply`.
+* When the Wine configuration window appears, make sure that `Windows 10`is selected under the
+* `Applications` tab. This is crucial as the  installer will crash if any other version is selected!
+  
+ * Then navigate to the  `Libraries` tab and select `d3dx11_43` to install DirectX 11. Click on `Add` and then on `Apply`.
 
 * Press the `OK` button to close the configuration window.
 <br/>
@@ -173,7 +159,30 @@ After the installation of Magic the Gathering Arena has finished the Installatio
 
 ![](/img/playonlinux_16.png)   
 
-* Run the Game!
+### Set the Video Memory size
+
+  * Before you start the game, head to the `Configure` button (the one with the cog wheel
+      * icon).
+  * In the popup window select the newly created `MTGA` Windows virtual drive and select the
+  * `Display`tab. 
+  * Leave all values at `default` except for `Video memory size`.
+  * Set it to a minimum of `4096`. (This is the maximum on my system - it might be higher
+      * depending on your system ressources).
+  <br/>
+  <br/>
+### Play the Game
+* That's it! 
+* Play the game!
+<br/>
+<br/>
+### Notes
+* The installation process might crash several times while downloading filess.  If so, don't give
+* up and restart the process. The installer should continue downloading files.
+* I highly advice stopping any background applications or activities during installation. My
+* installation crashed several times  while surfing the web.
+
+
+
 
 
 
