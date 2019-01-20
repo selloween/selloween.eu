@@ -4,14 +4,28 @@ date = "2019-01-16"
 author = "Selwyn"
 cover = "mtg-arena-on-linux.png"
 draft = "false"
-description = "A tutorial on how to install MTG Arena on Linux Debain 9 using PlayOnLinux. "
+description = "A tutorial on how to install MTG Arena on Debian using PlayOnLinux. "
 +++
 
 
-## 
+## Play MTG Arena on Linux
 
-In this tutorial I will show you how to install **Magic the Gathering Arena ** on Ubuntu 18.04 and Debian Stretch using PlayOnLinux. The game is very playable at low settings on an i5-8250U with Intel UHD 620 onboard graphics and 12 GB of system memory. Surely the game can be played with high settings on more powerful hardware.
+In this tutorial I will show you how to install `Magic the Gathering Arena` on  Debian Stretch using PlayOnLinux.
 
+### My Setup
+I tested the game on following system and am amazed how well it works.
+
+* Thinkpad T480s
+  * Intel i5 8250U
+  * Intel UHD 620 onboard GPU
+  * 12 GB DDR4 Ram
+  * Game Resolution of 1920*1080
+  * Low graphic settings
+
+Depending on your hardware specs, the graphics settings will vary. Having a dedicated GPU will
+benefit gameplay. I am content playing on low settings without the need of dedicated graphics.
+
+## PlayOnLinux
 
 PlayOnLinux is a graphical frontend for Wine with which you can install Windows application on Linux. Wine emulates the Windows runtime environment by translating Windows system calls into POSIX-compliant system calls.
 
@@ -20,7 +34,7 @@ PlayOnLinux is a graphical frontend for Wine with which you can install Windows 
 First download MTG Arena Windows executable from the official website: [https://magic.wizards.com/en/mtgarena](https://magic.wizards.com/en/mtgarena) 
 
 
-## Install PlayOnLinux on Debian 9
+## Install PlayOnLinux on Debian Stretch
 
 	
 On Debian Stretch you have to add the contribution repository by adding it to `/etc/apt/sources.list`.
