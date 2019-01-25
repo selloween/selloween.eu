@@ -3,7 +3,7 @@ title = "How to install i3 on Debian 9"
 date = "2018-12-26"
 author = "Selwyn"
 cover = "hello.png"
-draft = "false"
+draft = "true"
 description = "A step by step guide on how to install i3 on top of a minimal Debian 9 setup"
 +++
 
