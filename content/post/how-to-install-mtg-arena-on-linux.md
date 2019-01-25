@@ -27,7 +27,7 @@ benefit gameplay. I am content playing on low settings without the need of dedic
 
 ## PlayOnLinux
 
-PlayOnLinux is a graphical frontend for Wine with which you can install Windows application on Linux. Wine emulates the Windows runtime environment by translating Windows system calls into POSIX-compliant system calls.
+PlayOnLinux is a graphical frontend for Wine with which you can install Windows applications on Linux. Wine emulates the Windows runtime environment by translating Windows system calls into POSIX-compliant system calls.
 
 ## Download MTG Arena
 
