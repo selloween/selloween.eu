@@ -1,15 +1,8 @@
 +++ title = "cv" date = "2019-01-30" author = "Selwyn" +++
 
-```
-  _________      .__                         __________                                   
- /   _____/ ____ |  |__  _  _____.__. ____   \______   \ ____   ____   ___________  ______
- \_____  \_/ __ \|  |\ \/ \/ <   |  |/    \   |       _//  _ \ / ___\_/ __ \_  __ \/  ___/
- /        \  ___/|  |_\     / \___  |   |  \  |    |   (  <_> ) /_/  >  ___/|  | \/\___ \ 
-/_______  /\___  >____/\/\_/  / ____|___|  /  |____|_  /\____/\___  / \___  >__|  /____  >
-        \/     \/             \/         \/          \/      /_____/      \/           \/ 
-```
-___
-![alt text](https://github.com/selloween/cv/blob/master/profile.jpeg)
+# CV
+
+![alt text](https://raw.githubusercontent.com/selloween/cv/master/profile.jpeg)
 
 ## Personal Details
 
