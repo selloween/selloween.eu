@@ -4,13 +4,6 @@
 
 ![alt text](https://raw.githubusercontent.com/selloween/cv/master/profile.jpeg)
 
-## Personal Details
-
-
-| Name          | Nationality | Birthdate   | Website             | Github                       |
-| ------------- | ----------- | ----------- | ------------------- | ---------------------------- |
-| Selwyn Rogers | Austria     | 1984-02-09  | https://binarize.io | https://github.com/selloween |
-
 ## Current Stack
 
 * __Languages:__&nbsp; PHP, JavaScript, Python, Shell scripting
@@ -25,13 +18,11 @@ Open Access Hub, OneData, Keycloak, WordPress
 
 ## Experience
 
-| Time            | Function                 | Company                                | Website                    |
-| --------------- | ------------------------ | -------------------------------------- | -------------------------- |
-| 18-06 - now     | __DevOps Engineer__      | EODC - Earth Observation Data Centre   | https://eodc.eu            |
-| 18-01 - 18-05   | __Web Developer__        | DigitalWerk                            | https://digitalwerk.agency |
-| 17-09 - 17-11   | __Frontend Developer__   | IBM Client Innovation Center           | https://ibm.com            |
-| 16-04 - 17-08   | __Web Developer__        | Agentur MINT                           | https://agentur-mint.com   |
-| 14-08 - 16-03   | __Frontend Developer__   | netkey information technology          | https://netkey.at          |
+* 18-06 - now     | __DevOps Engineer__      | EODC - Earth Observation Data Centre   | https://eodc.eu            |
+* 18-01 - 18-05   | __Web Developer__        | DigitalWerk                            | https://digitalwerk.agency |
+* 17-09 - 17-11   | __Frontend Developer__   | IBM Client Innovation Center           | https://ibm.com            |
+* 16-04 - 17-08   | __Web Developer__        | Agentur MINT                           | https://agentur-mint.com   |
+* 14-08 - 16-03   | __Frontend Developer__   | netkey information technology          | https://netkey.at          |
 
 ## Education
 
