@@ -175,13 +175,10 @@ After the installation of Magic the Gathering Arena has finished the Installatio
 
 ### Set the Video Memory size
 
-  * Before you start the game, head to the `Configure` button (the one with the cog wheel
-      * icon).
-  * In the popup window select the newly created `MTGA` Windows virtual drive and select the
-  * `Display`tab. 
+  * Before you start the game, head to the `Configure` button (the one with the cog-wheel icon).
+  * In the popup window select the newly created `MTGA` Windows virtual drive and select the `Display`tab. 
   * Leave all values at `default` except for `Video memory size`.
-  * Set it to a minimum of `4096`. (This is the maximum on my system - it might be higher
-      * depending on your system ressources).
+  * Set it to a minimum of `4096`. (This is the maximum on my system - it might be higher depending on your system ressources).
   <br/>
   <br/>
 ### Play the Game
@@ -190,36 +187,8 @@ After the installation of Magic the Gathering Arena has finished the Installatio
 <br/>
 <br/>
 ### Notes
-* The installation process might crash several times while downloading filess.  If so, don't give
-* up and restart the process. The installer should continue downloading files.
+* The installation process might crash several times while downloading filess.  If so, don't give up and restart the process. The installer should continue downloading files.
 * I highly advice stopping any background applications or activities during installation. My
 * installation crashed several times  while surfing the web.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
 
 
