@@ -45,9 +45,9 @@ As our script will be running on a Linux server I would recommend setting up an 
 
 ### Main Requirements
 
-*Python 3
-*Python pip
-*Miniconda
+* Python 3
+* Python pip
+* Miniconda
 
 To keep things simple I will be demonstrating the installation on a Ubuntu/Debian system.
 Feel free to use any other distribution.
@@ -64,11 +64,11 @@ For more information on Conda visit: https://docs.conda.io
 
 #### Download Miniconda 3 installer
 
-*Visit https://docs.conda.io/en/latest/miniconda.html
-*Download the latest Miniconda 3 bash installer for 64-bit Linux
-*Make sure to download Miniconda for Python 3 (currently Python 3.7)
-*Open a terminal and navigate to the download directory
-*Make the installation script executable by using the command bellow (Change file name accordingly to the version)
+* Visit https://docs.conda.io/en/latest/miniconda.html
+* Download the latest Miniconda 3 bash installer for 64-bit Linux
+* Make sure to download Miniconda for Python 3 (currently Python 3.7)
+* Open a terminal and navigate to the download directory
+* Make the installation script executable by using the command bellow (Change file name accordingly to the version)
 
 ```bash
 sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
@@ -352,7 +352,7 @@ def get_keycloak_token():
 With the obtainend access token we can now fetch registration events using the Rest API.
 For that we will create a function called `get_keycloak_events()` which will take two arguments (a token and the type of event - in our case a 'registration' event). Passing on a event type will keep things modular and upgradeable if you plan on requesting other event types in the future e.g. login attempts etc.
 
-*Define the function and request the events using the API.
+* Define the function and request the events using the API.
 
 ```python
 #...
@@ -369,7 +369,7 @@ def get_keycloak_events(token, event_type):
 #...
 ```
 
-*Check if the response returns a 200 status code
+* Check if the response returns a 200 status code
 
 ```python
 # ...
@@ -381,7 +381,7 @@ else:
 # ...
 ```
 
-*Create the log file – The file will contain the timestamp of the last event as an reference point.
+* Create the log file – The file will contain the timestamp of the last event as an reference point.
 
 ```python
     # ...
@@ -396,9 +396,9 @@ else:
     # ...
 ```
 
-*Now we have to loop through the events, get the time of the event, convert the UNIX timecode to a human readable time format.
-*We also have to subtract the 3 last characters of the timecode to receive a valid UNIX timecode.
-*Then we fetch the email address and user ID which we pass on to our email message.
+* Now we have to loop through the events, get the time of the event, convert the UNIX timecode to a human readable time format.
+* We also have to subtract the 3 last characters of the timecode to receive a valid UNIX timecode.
+* Then we fetch the email address and user ID which we pass on to our email message.
 
 ```python
 # ...
@@ -418,9 +418,9 @@ for event in events:
     # ...
 ```
 
-*Now let's compare the time of the current looped event with the last timestamp saved in the `timestamp.log` file.
-*If the time value is the same as the last timestamp there have been no new events and no further action is required, so we can break the loop and print out a short information message.
-*If the time value is larger than the last saved timestamp, our email is sent using our `send_mail()`and the current event timestamp is written to the `timestamp.log` file.
+* Now let's compare the time of the current looped event with the last timestamp saved in the `timestamp.log` file.
+* If the time value is the same as the last timestamp there have been no new events and no further action is required, so we can break the loop and print out a short information message.
+* If the time value is larger than the last saved timestamp, our email is sent using our `send_mail()`and the current event timestamp is written to the `timestamp.log` file.
 
 ```python
 # ...
@@ -438,7 +438,7 @@ else:
 # ...
 ```
 
-*For each event a email will be sent in parallel. To avoid beeing marked as spam mail we can add a time delay of 2 seconds at the end of the for loop.
+* For each event a email will be sent in parallel. To avoid beeing marked as spam mail we can add a time delay of 2 seconds at the end of the for loop.
 
 ```python
 # ...
