@@ -4,7 +4,7 @@ date = "2019-03-19"
 author = "Selwyn"
 cover = ""
 draft = "false"
-description = "Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it can be crucial beeing notified when a new user registers and take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. In this guide we will write a Python script using the Python Keycloak library. The script we run regulary as a cronjob and send email notification on Registration events."
+description = "Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it can be crucial beeing notified when a new user registers to take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. In this guide we will write a Python script using the Python Keycloak library. The script we run regulary as a cronjob and send email notification on Registration events."
 +++
 
 # Keycloak Admin Notifier
