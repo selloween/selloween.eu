@@ -7,20 +7,20 @@ draft = "false"
 description = "Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it can be crucial beeing notified when a new user registers and take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. In this guide we will write a Python script using the Python Keycloak library. The script we run regulary as a cronjob and send email notification on Registration events."
 +++
 
-# Keycloak Registration Notifier
+# Keycloak Admin Notifier
 
 Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator.
-As an admin it can be crucial beeing notified when a new user registers and take further actions like granting a user specific roles and permissions.
+As an admin it can be crucial beeing notified when a new user registers and take further action like granting a user specific roles and permissions.
 
-Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events.
+You can review the full source code in my github repository: https://github.com/selloween/keycloak-admin-notifier
 
-I will also provide a tutorial in the near future on how to programmaticaly add users to groups at registration based on custom attributes and integrate this functionality in our script.
+Thankfully Keycloak offers an extensive Rest API that we can use to fetch data and further process user events.
 
 In this guide we will write a Python script that sends notifications to a specified email address when a new user registers. We will take advantage of `python-keycloak`, a Python package providing access to the Keycloak API.
 
 You can read more on python keycloak here: https://pypi.org/project/python-keycloak/
 
-Our script can be easily modified to send emails on any other event such as user login or failed login attempts.
+The script can be easily modified to send emails on any other event such as user logins or failed login attempts.
 
 For more information on the Keycloak Admin Rest API visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html
 
@@ -33,17 +33,17 @@ Let's note down the steps that we want our script to do.
 3. Get user information from the response
 4. (Optional actions like adding a user to a specific group - this will be handled in another tutorial)
 5. Send an email containing user information to the admin
-6. Create a log file containing a timestamp of the last registration
+6. Create a log file containing a timestamp of the last event
 7. Run the script regulary by creating a cronjob on the server
 
-## Enivronment setup
+## Environment setup
 
-Before we can start we have to make sure that  following requirements installed on our system:
+Before we can start we have to make sure that following requirements are installed on the system:
 This guide assumes installation in a Linux environment. If you are a Mac or Windows user you can install the requirements by reffering to the online documentation accordingly.
 
-As our script will be running on a Linux server I would recommend setting up an virtual environment by setting up either a Virtual Machine or using Docker.
+As our script will be running on a Linux server I would recommend setting up an virtual environment using a Virtual Machine or Docker.
 
-### Requirements
+### Main Requirements
 
 *Python 3
 *Python pip
@@ -58,7 +58,7 @@ Feel free to use any other distribution.
 
 ### Install Miniconda
 
-"Conda is an open source package management system and environment management system that runs on Windows, macOS and Linux. Conda quickly installs, runs and updates packages and their dependencies. Miniconda is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on and a small number of other useful packages."
+"Conda is an open source package and environment management system that runs on Windows, macOS and Linux. Conda quickly installs, runs and updates packages and their dependencies. Miniconda is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on and a small number of other useful packages."
 
 For more information on Conda visit: https://docs.conda.io
 
@@ -116,10 +116,10 @@ You can deactive the environment like this: `conda deactivate env_name`
 
 ## Create a Keycloak Realm Admin
 
-Each Keycloak Realm has its own `admin-cli` client which only a realm administrator can access. We have to create an dedicated realm admin or give an exisiting user the required realm administration roles so that we can access the realm admin-cli. Out of security reasons I would suggest having only one dedicated realm administrator per realm. Keep in mind that the master realm administrator can't access the admin-cli of another realm than the master realm via the API. 
+Each Keycloak Realm has its own `admin-cli` client which only a realm administrator can access. We have to create an dedicated realm admin or give an exisiting user the required realm administration roles so that we can access the realm admin-cli. Out of security reasons I would suggest having only one dedicated realm administrator per realm. Keep in mind that the master realm administrator can't access the admin-cli of another realm than the master realm via the API directly.
 
 * Navigate to your desired Realm Dashboard in the graphical Keycloak admin interface.
-* Click on `Users`in the navigation sidebar and add an new user by clicking the `Add User` button.
+* Click on `Users`in the navigation sidebar and add a new user by clicking the `Add User` button.
 * Create the user and don't forget to set a secure password - this is done in the `Credentials` tab
 * Click on the `Role Mappings` tab and extend the `Client Roles` dropdown menu.
 * Select `Realm Management` and assign all available roles. Keep in mind that this gives the user all possible realm permissions. You might want to restrict some of the permissions depending on your needs.
@@ -127,10 +127,9 @@ Each Keycloak Realm has its own `admin-cli` client which only a realm administra
 ## Directory structure
 
 1. Create a project directory and name it as your liking.
-2. Create a sub-directory and name it `log`.This will be the directory the script will write our `timestamp.log` file.
-3. Create a file named `environment.yml`. Conda will list our dependencies here.
-4. Create Python file and name it `notifier.py`. This file will contain our source code.
-5. Create a file named `run.sh`. This file will export necessary environment variables and run the notifier Python script.
+2. Create a sub-directory and name it `log`. This will be the directory the script will write to our `timestamp.log` file.
+3. Create Python file and name it `notifier.py`. This file will contain our source code.
+4. Create a file named `run.sh`. This file will export necessary environment variables and run the notifier Python script.
 
 The directory structure should look like this:
 
@@ -157,6 +156,13 @@ pip install datetime
 ```
 
 `python-keycloak` and `DateTime` are the only two external packages needed. The rest of our dependencies are intergrated Python modules. 
+
+## Export the conda environment
+We will now export the conda environment to a file:
+
+```bash
+conda env export > environment.yml
+```
 
 ## Code the Script
 
@@ -606,6 +612,3 @@ Time to deploy the script and create a hourly cronjob using crontab
 
 That's it - the cronjob will trigger the `notifier.sh` script by the hour.
 To test if everything works register a new user and you should receive an email by the hour.
-
-
-
