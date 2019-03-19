@@ -598,17 +598,17 @@ def get_keycloak_events(token, event_type):
 get_keycloak_events(get_keycloak_token(), 'REGISTER')
 ```
 
-## Create a cronjob
+## Deploy and create a cronjob
 
 Time to deploy the script and create a hourly cronjob using crontab
 
-
-1. Open `run.sh' and change` the `$USER`variable to the username of the system user. (The full path of the home directory containg our project)
-2. Copy the script to cron directory: `sudo cp run.sh /etc/cron.hourly`
-3. Navigate to cron directory: `cd /etc/cron.hourly`
-4. Give the script the correct permissions: `sudo chmod 755 run.sh`
-5. Add a new cronjob to crontab: `crontab -e`
-6. Add following line: `0 * * * * /etc/cron.hourly/run.sh`, save the file and exit.
+1. Upload the project directory to the user home directory of the server
+2. Open `run.sh' and change` the `$USER`variable to the username of the system user. (The full path of the home directory containg our project)
+3. Copy the script to cron directory: `sudo cp run.sh /etc/cron.hourly`
+4. Navigate to cron directory: `cd /etc/cron.hourly`
+5. Give the script the correct permissions: `sudo chmod 755 run.sh`
+6. Add a new cronjob to crontab: `crontab -e`
+7. Add following line: `0 * * * * /etc/cron.hourly/run.sh`, save the file and exit.
 
 That's it - the cronjob will trigger the `notifier.sh` script by the hour.
 To test if everything works register a new user and you should receive an email by the hour.
