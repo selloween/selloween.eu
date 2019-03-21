@@ -23,6 +23,7 @@
     <div class="post-content">
       {{ .Content }}
     </div>
+    {{ template "_internal/disqus.html" . }}
     {{ if or .NextInSection .PrevInSection }}
       <div class="pagination">
         <div class="pagination__title">
@@ -41,6 +42,8 @@
     {{ end }}
   </div>
 {{ end }}
+
+
 
 
                               
