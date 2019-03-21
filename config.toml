@@ -16,10 +16,10 @@ paginate = 5
 #   path = "/img/your-example-logo.svg"
 #   alt = ""
 
-#[menu]
-#  [[menu.main]]
-#    identifier = "about"
-#    name = "#About"
-#    url = "/about"
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "#About"
+    url = "/about"
 
 disqusShortname = "binarize"
