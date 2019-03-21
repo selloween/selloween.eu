@@ -1,55 +1,49 @@
 +++
-title = "Receive email notifications in Keycloak using Python and the Keycloak Admin API"
+title = "Receive email notifications from Keycloak using Python and the Keycloak Admin API"
 date = "2019-03-19"
 author = "Selwyn"
 cover = ""
 draft = "false"
-description = "Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it can be crucial beeing notified when a new user registers to take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. In this guide we will write a Python script using the Python Keycloak library. The script we run regulary as a cronjob and send email notification on Registration events."
+description = "Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it is crucial beeing notified when a new user registers to take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. In this guide we will write a Python script using the Python Keycloak library. The script will run regulary as a cronjob and send emails on registration events."
 +++
 
 # Keycloak Admin Notifier
 
-Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator.
-As an admin it can be crucial beeing notified when a new user registers and take further action like granting a user specific roles and permissions.
+Keycloak is a great Identity and Access Managment (IAM) solution but lacks currently the ability of sending notification emails to the administrator. As an admin it is crucial beeing notified when a new user registers to take further actions like granting a user specific roles and permissions. Thankfully Keycloak offers an extensive Rest API that we can use to fetch and further process user events. 
 
 You can review the full source code in my github repository: https://github.com/selloween/keycloak-admin-notifier
 
-Thankfully Keycloak offers an extensive Rest API that we can use to fetch data and further process user events.
-
 In this guide we will write a Python script that sends notifications to a specified email address when a new user registers. We will take advantage of `python-keycloak`, a Python package providing access to the Keycloak API.
-
-You can read more on python keycloak here: https://pypi.org/project/python-keycloak/
-
 The script can be easily modified to send emails on any other event such as user logins or failed login attempts.
 
+You can read more on python keycloak here: https://pypi.org/project/python-keycloak/
 For more information on the Keycloak Admin Rest API visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html
 
 ## Steps Overview
 
 Let's note down the steps that we want our script to do.
 
-1. Authenticate with the Keycloak Admin CLI as a admin user and fetch an access token
+1. Authenticate with the Keycloak Admin CLI and fetch an access token
 2. Request registration events
 3. Get user information from the response
-4. (Optional actions like adding a user to a specific group - this will be handled in another tutorial)
-5. Send an email containing user information to the admin
+4. (Optional actions, e.g. adding a user to a specific group - this will be handled in another tutorial)
+5. Send an email containing user information to a specified email address
 6. Create a log file containing a timestamp of the last event
 7. Run the script regulary by creating a cronjob on the server
 
 ## Environment setup
 
 Before we can start we have to make sure that following requirements are installed on the system:
-This guide assumes installation in a Linux environment. If you are a Mac or Windows user you can install the requirements by reffering to the online documentation accordingly.
 
-As our script will be running on a Linux server I would recommend setting up an virtual environment using a Virtual Machine or Docker.
-
-### Main Requirements
+### Requirements
 
 * Python 3
 * Python pip
 * Miniconda
 
-To keep things simple I will be demonstrating the installation on a Ubuntu/Debian system.
+This guide assumes installation in a Linux environment. If you are a Mac or Windows user you can install the requirements by reffering to the online documentation accordingly.
+As our script will be running on a Linux server I would recommend setting up an virtual environment using a Virtual Machine or Docker.
+To keep things simple I will be demonstrating the setup on a Ubuntu/Debian system.
 Feel free to use any other distribution.
 
 ### Install Python 3
@@ -68,7 +62,7 @@ For more information on Conda visit: https://docs.conda.io
 * Download the latest Miniconda 3 bash installer for 64-bit Linux
 * Make sure to download Miniconda for Python 3 (currently Python 3.7)
 * Open a terminal and navigate to the download directory
-* Make the installation script executable by using the command bellow (Change file name accordingly to the version)
+* Make the installation script executable by using the command bellow (Change the file name accordingly to the current Python version)
 
 ```bash
 sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
@@ -95,9 +89,9 @@ conda update conda
 
 ## Create a Virtual Environment
 
-*Open a terminal and enter the command bellow where `env_name` is the name of the environment.
-*Replace the Python version accordingly by first checking the Python 3 version installed as showed in the example.
-*Activate the environment.
+* Open a terminal and enter the command bellow where `env_name` is the name of the environment.
+* Replace the Python version accordingly by first checking the Python 3 version installed as showed in the example.
+* Activate the environment.
 
 ```bash
 $ python -V
@@ -116,7 +110,7 @@ You can deactive the environment like this: `conda deactivate env_name`
 
 ## Create a Keycloak Realm Admin
 
-Each Keycloak Realm has its own `admin-cli` client which only a realm administrator can access. We have to create an dedicated realm admin or give an exisiting user the required realm administration roles so that we can access the realm admin-cli. Out of security reasons I would suggest having only one dedicated realm administrator per realm. Keep in mind that the master realm administrator can't access the admin-cli of another realm than the master realm via the API directly.
+Each Keycloak Realm has its own `admin-cli` client which only a realm administrator can access. We have to create an dedicated realm admin or give an exisiting user the required realm administration roles so that he can access the realm admin-cli. Out of security reasons I would suggest having only one dedicated realm administrator per realm. Keep in mind that the master realm administrator can't access the admin-cli of another realm than the master realm via the API directly.
 
 * Navigate to your desired Realm Dashboard in the graphical Keycloak admin interface.
 * Click on `Users`in the navigation sidebar and add a new user by clicking the `Add User` button.
@@ -135,30 +129,30 @@ The directory structure should look like this:
 
 ```bash
 log
-environment.yml
 notifier.py
 run.sh
 ```
 
 ## Install Dependencies
 
-To get easy access to the Keycloak API we will use a Python library called `python-keycloak` as mentioned before. As there is no conda package we will install it using `pip`.
+To get easy access to the Keycloak API we will install a Python library called `python-keycloak`.
 Make sure you activated the conda environment: `conda activate env_name`.
 
 ```bash
 pip install python-keycloak
 ```
 
-Next we will install the `DateTime` package which will later on help converting UNIX timecode to human readable time.
+Next install the `DateTime` package which will later on help convert UNIX timecode to human readable time.
 
 ```bash
 pip install datetime
 ```
 
-`python-keycloak` and `DateTime` are the only two external packages needed. The rest of our dependencies are intergrated Python modules. 
+`python-keycloak` and `DateTime` are the only two external packages needed. The rest of the dependencies are intergrated Python modules.
 
 ## Export the conda environment
-We will now export the conda environment to a file:
+
+Export the conda environment to a file:
 
 ```bash
 conda env export > environment.yml
@@ -166,7 +160,6 @@ conda env export > environment.yml
 
 ## Code the Script
 
-Now that we finally have our environment setup and created a Keycloak realm admin we can start coding our script!
 Open `notifier.py` and add the dependencies.
 
 ### Import Dependencies
@@ -187,12 +180,9 @@ from email.message import EmailMessage
 
 ### Create environment variables
 
-In order for our script to authenticate we will have to provide our admin credentials. We do not want to store sensitive data like username and password plaintext in our code. Instead it is a better idea to export environment variables and assigning them to variables in our code. Herefore we will add them in our `run.sh` script.
+In order for the script to authenticate we will have to provide the admin credentials. We do not want to store sensitive data like username and password plaintext in our code. Instead it is a better idea to export environment variables and import them in our code. Therfore export them in the  `run.sh` script.
 
-Important Note: Never ever add `run.sh` or any other file containing sensitive data to a git repository! Therefore add this file to `.gitignore`! In my github repository you will find a file called run.sample.sh that can be used as template.
-
-`run.sh` will contain environment variables for Keycloak and SMTP settings.
-
+Important Note: Make sure `run.sh` is never pushed to a repository. Add this file to `.gitignore`
 Open `run.sh`in your text editor of choice and add the following environment variables. Adjust their values accordingly.
 
 ```bash
@@ -209,13 +199,15 @@ export SMTP_PASSWORD=your-smtp-passwordadmin-password
 
 ```
 
-* `run.sh` will be our entrypoint to run our python script by adding following line after exporting the environment variables. `$USER` will automatically get the user running the script. Note that this has to be hardcoded to an actual user once deployed in production. We will cover that later on. Make sure to replace `env_name` with name you gave your conda environment. We are using the absolute path to the python binary located in the conda environment we setup beforehand. This ensures using the correct Python version.
+* `run.sh` will be the entrypoint of our python script.   We will cover that later on. Make sure to replace `env_name` with name you gave your conda environment. We are using the absolute path to the python binary located in the conda environment.  This ensures using the correct Python version and having all dependencies met.
 
 ```bash
 /home/$USER/miniconda3/envs/env_name/bin/python notifier.py
 ```
 
-The whole code of `run.sh` should look like this:
+The `$USER` variable will automatically get the user running the script. Note that the user variable has to be replaced to an actual user once deployed.
+
+The complete ode of `run.sh` should look like this:
 
 ```bash
 #!/bin/bash
@@ -243,7 +235,7 @@ Now we can ensure that the necessary environment variables are exported and that
 
 ### Configure SMTP
 
-Using the SMTP Python library `smtplib` we can create a simple function for sending messsages to a specifided email address (e.g. to an admin). Our function takes two arguments as string values - the message of the email and the keycloak event.
+Using the SMTP Python library `smtplib` we can create a simple function for sending messsages to a specifided email address (e.g. to an admin). Our function takes two string arguments - the message of the email and the keycloak event.
 
 ```python
 def send_mail(message, event):
@@ -277,11 +269,9 @@ def send_mail(message, event):
 
 ### Authentication
 
-Let's now head on to the authentication part of our script.
-
 #### Import Keycloak Credentials
 
-We will import the environment variables and store the containing values in variables. Open `notifier.py` and declare following variables:
+Open `notifier.py` and declare following variables:
 
 ```python
 # ...
@@ -292,7 +282,7 @@ keycloak_realm = os.environ['KEYCLOAK_REALM']
 # ...
 ```
 
-Now that we have our Keycloak credentials stored safely let's pass them to the `KeycloakAdmin()` method of `python-keycloak` and to make things easy later on we will create a dictionary storing our keycloak data.
+Now that we have our Keycloak credentials stored safely let's pass them to the `KeycloakAdmin()` method imported from `python-keycloak`.
 
 ```python
 # ...
@@ -320,9 +310,9 @@ keycloak_data = {
 
 #### Get the Access Token
 
-Let's write a simple function to request an access token. We will add our keycloak credentials, grant type and client id in the data field of the http header.
+Let's write a simple function to request an access token. We will add the keycloak credentials, grant type and client id in the data field of the http header.
 
-This function will request a access token and return it:
+This function will request and return an access token.
 
 ```python
 # ...
@@ -349,10 +339,10 @@ def get_keycloak_token():
 
 #### Get Keycloak Registrations
 
-With the obtainend access token we can now fetch registration events using the Rest API.
-For that we will create a function called `get_keycloak_events()` which will take two arguments (a token and the type of event - in our case a 'registration' event). Passing on a event type will keep things modular and upgradeable if you plan on requesting other event types in the future e.g. login attempts etc.
+With the obtainend access token we can now fetch registration events.
+Create a function called `get_keycloak_events()` which will take two arguments (a token and the type of event - in our case a 'registration' event). Passing on a event type will keep things modular and upgradeable if you plan on requesting other event types in the future e.g. login attempts etc.
 
-* Define the function and request the events using the API.
+* Define the function and request the events
 
 ```python
 #...
@@ -396,9 +386,9 @@ else:
     # ...
 ```
 
-* Now we have to loop through the events, get the time of the event, convert the UNIX timecode to a human readable time format.
-* We also have to subtract the 3 last characters of the timecode to receive a valid UNIX timecode.
-* Then we fetch the email address and user ID which we pass on to our email message.
+* Loop through the events, get the time of the event, convert the UNIX timecode to a human readable time format.
+* Subtract the 3 last characters of the timecode to receive a valid UNIX timecode.
+* Fetch the email address and user ID and pass them to the email message.
 
 ```python
 # ...
@@ -418,9 +408,9 @@ for event in events:
     # ...
 ```
 
-* Now let's compare the time of the current looped event with the last timestamp saved in the `timestamp.log` file.
-* If the time value is the same as the last timestamp there have been no new events and no further action is required, so we can break the loop and print out a short information message.
-* If the time value is larger than the last saved timestamp, our email is sent using our `send_mail()`and the current event timestamp is written to the `timestamp.log` file.
+* Compare the time of the current looped event with the last timestamp saved in the `timestamp.log` file.
+* If the time value is equal to the last timestamp, there have been no new events and further action is not required, so we can break the loop and print out a short information message.
+* If the time value is larger than the last saved timestamp, a email is sent using the `send_mail()` method and the current event timestamp is written to the `timestamp.log` file.
 
 ```python
 # ...
@@ -438,7 +428,7 @@ else:
 # ...
 ```
 
-* For each event a email will be sent in parallel. To avoid beeing marked as spam mail we can add a time delay of 2 seconds at the end of the for loop.
+* For each event a email will be sent in parallel. To avoid beeing marked as spam mail add a time delay of 2 seconds at the end of the for loop.
 
 ```python
 # ...
@@ -448,7 +438,8 @@ sleep(2) # Time in seconds
 
 #### Call the main function
 
-Last but not least we have to call the main function at the end of our script. We will pass on the `get_keycloak_token()` that fetches an access token and the string value `REGISTER` as event type.
+* Last but not least call the main function at the end of the script.
+* Pass on the `get_keycloak_token()` and the string value `REGISTER`
 
 ```python
 # ...
@@ -456,8 +447,7 @@ get_keycloak_events(get_keycloak_token(), 'REGISTER')
 # ...
 ```
 
-## The Code
-Now that our script is ready let's review the whole code:
+## The complete Code
 
 ```python
 import requests
@@ -598,17 +588,18 @@ def get_keycloak_events(token, event_type):
 get_keycloak_events(get_keycloak_token(), 'REGISTER')
 ```
 
-## Deploy and create a cronjob
+## Deploy and create a Cronjob
 
 Time to deploy the script and create a hourly cronjob using crontab
 
-1. Upload the project directory to the user home directory of the server
-2. Open `run.sh' and change` the `$USER`variable to the username of the system user. (The full path of the home directory containg our project)
-3. Copy the script to cron directory: `sudo cp run.sh /etc/cron.hourly`
-4. Navigate to cron directory: `cd /etc/cron.hourly`
+1. Upload the project directory to the user home directory
+2. Open `run.sh' and change` the `$USER`variable to the actual username
+3. Copy the script to the hourly cron directory: `sudo cp run.sh /etc/cron.hourly`
+4. Navigate to the cron directory: `cd /etc/cron.hourly`
 5. Give the script the correct permissions: `sudo chmod 755 run.sh`
 6. Add a new cronjob to crontab: `crontab -e`
-7. Add following line: `0 * * * * /etc/cron.hourly/run.sh`, save the file and exit.
+7. Add following line: `0 * * * * /etc/cron.hourly/run.sh`
+8. Save the file and exit.
 
 That's it - the cronjob will trigger the `notifier.sh` script by the hour.
-To test if everything works register a new user and you should receive an email by the hour.
+To test if everything works register a new user and run `./notifier.sh`
