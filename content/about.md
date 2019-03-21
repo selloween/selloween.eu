@@ -15,6 +15,6 @@ I'm a mostly self taught DevOps Engineer based in Vienna. In my free time I enjo
 With this blog i hope to share my passion for Open Source technologies and give something back to the community.
 
 - Follow me on [**GitHub**](https://github.com/selloween)
-- View [**LinkedIn Profile**](https://linkedin.com/in/selwyn-rogers-172a07180/)
+- View my [**LinkedIn Profile**](https://linkedin.com/in/selwyn-rogers-172a07180/)
 
 Enjoy your stay!
