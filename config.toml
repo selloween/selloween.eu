@@ -1,25 +1,12 @@
 baseURL = "https://binarize.io"
 languageCode = "en-us"
-theme = "solar-theme-hugo"
+theme = "simple-html"
 title = "binarize.io"
 name = "binarize.io"
-copyright = ""
 paginate = 5
-
-[params]
-  subtitle = "A DevOps Engineer's Blog"
-
-[params.logo]
-  logoText = "binarize.io"
-#   or
-#
-#   path = "/img/your-example-logo.svg"
-#   alt = ""
 
 [menu]
   [[menu.main]]
     identifier = "about"
     name = "#About"
     url = "/about"
-
-disqusShortname = "binarize"

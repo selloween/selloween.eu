@@ -1,0 +1,7 @@
+<header class="header">
+    <span class="header__right">
+      {{ if len .Site.Menus }}
+        {{ partial "menu.html" . }}
+      {{ end }}
+    </span>
+</header>
