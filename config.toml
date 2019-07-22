@@ -1,6 +1,6 @@
 baseURL = "https://binarize.io"
 languageCode = "en-us"
-theme = "hello-friend"
+theme = "solar-theme-hugo"
 title = "binarize.io"
 name = "binarize.io"
 copyright = ""
