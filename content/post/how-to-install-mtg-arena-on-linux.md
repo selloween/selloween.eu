@@ -2,7 +2,6 @@
 title = "How to install Magic the Gathering Arena on Debian Stretch"
 date = "2019-01-16"
 author = "Selwyn"
-cover = "mtg-arena-on-linux.png"
 draft = "false"
 description = "A tutorial on how to install MTG Arena on Debian using PlayOnLinux. "
 +++
