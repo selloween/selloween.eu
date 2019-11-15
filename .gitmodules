@@ -4,3 +4,6 @@
 [submodule "themes/themes/solar-theme-hugo"]
 	path = themes/themes/solar-theme-hugo
 	url = https://github.com/bake/solar-theme-hugo.git
+[submodule "themes/terminal"]
+	path = themes/terminal
+	url = https://github.com/panr/hugo-theme-terminal.git
