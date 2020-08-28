@@ -1,5 +1,13 @@
-# Run GitLab Runner Podman Container using Runners with Docker Executors
++++
+title = "Run GitLab Runner Podman Container using Runners with Docker Executors"
+date = "2020-08-27"
+author = "Selwyn"
+cover = ""
+draft = "false"
+description = "Currently there isn't an official GitLab Runner Executor for Podman. Due to RedHat Enterprise Linux 8 replacing Docker with Podman I had to find a simple solution for getting my Runners with Docker Executors running on RHEL8 without installing Docker natively or having to write a custom executor from scratch. The trick is to run a Podman Container running Docker inside and sharing it's Docker Socket as a volume between containers!"
++++
 
+# Run GitLab Runner Podman Container using Runners with Docker Executors
 You can find my demo setup here: https://github.com/selloween/podman-gitlab-runner-docker-executor
 
 ## Preface
