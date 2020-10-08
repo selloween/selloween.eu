@@ -4,7 +4,7 @@ date = "2020-08-27"
 author = "Selwyn"
 cover = ""
 draft = "false"
-description = "This guide will show you how to harden your Debian Buster server by setting up UFW (Uncomplicated Firewall), Fail2Ban and modifying SSH configuration. 
+description = "This guide will show you how to harden your Debian Buster server by setting up UFW (Uncomplicated Firewall), Fail2Ban and modifying SSH configuration." 
 +++
 
 # How to harden Debian Buster
