@@ -1,6 +1,6 @@
 +++
-title = "Run GitLab Runner Podman Container using Runners with Docker Executors"
-date = "2020-08-27"
+title = "How to harden Debian Buster"
+date = "2020-10-08"
 author = "Selwyn"
 cover = ""
 draft = "false"
