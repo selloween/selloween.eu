@@ -7,13 +7,10 @@ tags: ["keycloak","security","linux","iam","python"]
 ShowToc: false
 ShowBreadCrumbs: false
 ---
-Keycloak is a great Identity and Access Management (IAM) solution but lacks the ability to send notification emails to the administrator. As an admin, it is crucial to be notified when a new user registers so that you can take further actions like granting specific roles and permissions. Thankfully, Keycloak offers an extensive Rest API that we can use to fetch and process user events.
 
-In this guide, we will write a Python script that sends notifications to a specified email address when a new user registers. We will take advantage of python-keycloak, a Python package providing access to the Keycloak API. The script can be easily modified to send emails on any other event, such as user logins or failed login attempts.
-
-You can learn more about python-keycloak here: https://pypi.org/project/python-keycloak/ For more information on the Keycloak Admin Rest API, visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html.
-
-You can review the full source code for this guide on my GitHub repository: https://github.com/selloween/keycloak-admin-notifier.
+* You can learn more about python-keycloak here: https://pypi.org/project/python-keycloak/
+* For more information on the Keycloak Admin Rest API, visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html.
+* You can review the full source code for this guide on my GitHub repository: https://github.com/selloween/keycloak-admin-notifier.
 
 ## Steps Overview
 To receive email notifications from Keycloak using Python and the Keycloak Admin API, we will need to perform the following steps:
