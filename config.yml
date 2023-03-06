@@ -75,7 +75,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: I'm Selwyn, a DevOps Engineer based in Vienna.
+    Content: I'm Selwyn, a DevOps Engineer based near Vienna. This is my blog.
 
   socialIcons:
     #- name: twitter
