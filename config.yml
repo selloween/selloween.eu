@@ -17,14 +17,14 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
+  title: selloween.eu
   description: "A DevOps Engineer's Blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Selwyn Rogers
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme:  dark #auto #light
   disableThemeToggle: false
 
   ShowReadingTime: true
