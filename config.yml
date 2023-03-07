@@ -54,14 +54,14 @@ params:
 
   label:
     text: "selloween.eu"
-    icon: /apple-touch-icon.png
+    #icon: /apple-touch-icon.png
     iconHeight: 35
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
+    enabled: false # needs to be explicitly set
+    title: "Hi there \U0001F44B"
+    subtitle: "I'm Selwyn, a DevOps Engineer based near Vienna. Welcome to my blog, where I explore various DevOps and System Engineering topics, including but not limited to OpenShift/Kubernetes, CI/CD, Linux Administration, and other related subjects."
     imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
@@ -119,6 +119,10 @@ menu:
     #   name: categories
     #   url: /categories/
     #   weight: 10
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
