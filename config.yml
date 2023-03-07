@@ -86,6 +86,8 @@ params:
       url: "https://github.com/selloween"
     - name: linkedin
       url: "https://linkedin.com"
+    - name: twitter
+      url: "https://twitter.com"
 
   #analytics:
   #  google:
