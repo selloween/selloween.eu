@@ -8,11 +8,6 @@ ShowToc: false
 ShowBreadCrumbs: false
 ---
 
-* You can learn more about python-keycloak here: https://pypi.org/project/python-keycloak/
-* For more information on the Keycloak Admin Rest API, visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html.
-* You can review the full source code for this guide on my GitHub repository: https://github.com/selloween/keycloak-admin-notifier.
-
-## Steps Overview
 To receive email notifications from Keycloak using Python and the Keycloak Admin API, we will need to perform the following steps:
 
 1. Authenticate with the Keycloak Admin API and fetch an access token.
@@ -595,3 +590,8 @@ Time to deploy the script and create a hourly cronjob using crontab
 
 That's it - the cronjob will trigger the `notifier.sh` script by the hour.
 To test if everything works register a new user and run `./notifier.sh`
+
+## Additional Ressources
+* You can learn more about python-keycloak here: https://pypi.org/project/python-keycloak/
+* For more information on the Keycloak Admin Rest API, visit: https://www.keycloak.org/docs-api/2.5/rest-api/index.html.
+* You can review the full source code for this guide on my GitHub repository: https://github.com/selloween/keycloak-admin-notifier.

@@ -8,9 +8,6 @@ ShowToc: false
 ShowBreadCrumbs: false
 ---
 
-# How to harden Debian Buster
-
-## Update system
 To install the necessary dependencies, you can use apt. Run the following command to update the package list and upgrade the system:
 ```bash
 apt-get update -y && apt-get upgrade -y
