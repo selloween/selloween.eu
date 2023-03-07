@@ -75,7 +75,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: I'm Selwyn, a DevOps Engineer based near Vienna. This is my blog.
+    Content: "I'm Selwyn, a DevOps Engineer based near Vienna. Welcome to my blog, where I explore various DevOps and System Engineering topics, including but not limited to OpenShift/Kubernetes, CI/CD, Linux Administration, and other related subjects."
 
   socialIcons:
     #- name: twitter
@@ -115,10 +115,10 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
     - identifier: tags
       name: tags
       url: /tags/
