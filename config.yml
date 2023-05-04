@@ -67,7 +67,7 @@ params:
     imageHeight: 230
     imageTitle: Profile image
     buttons:
-      - name: Posts
+      - name: Blog
         url: posts
       - name: Tags
         url: tags
