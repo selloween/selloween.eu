@@ -59,13 +59,13 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    enabled: true # needs to be explicitly set
+    title: Selwyn Rogers
+    subtitle: "I'm Selwyn, a DevOps Engineer based in Vienna."
+    imageUrl: "/img/profile.jpg"
+    imageWidth: 230
+    imageHeight: 230
+    imageTitle: Profile image
     buttons:
       - name: Posts
         url: posts
@@ -82,6 +82,8 @@ params:
       #url: "https://twitter.com/"
         #- name: stackoverflow
       #  url: "https://stackoverflow.com"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/selwyn-rogers-39a6b5274/"
     - name: github
       url: "https://github.com/selloween"
 
