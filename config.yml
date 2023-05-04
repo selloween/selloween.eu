@@ -86,10 +86,6 @@ params:
       url: "https://www.linkedin.com/in/selwyn-rogers-39a6b5274/"
     - name: github
       url: "https://github.com/selloween"
-    - name: linkedin
-      url: "https://linkedin.com"
-    - name: twitter
-      url: "https://twitter.com"
 
   #analytics:
   #  google:
