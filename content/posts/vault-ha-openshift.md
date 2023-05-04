@@ -3,7 +3,7 @@ author: "Selwyn Rogers"
 title: "Hashicorp Vault in High Availability Mode on RedHat OpenShift 4.10.10"
 date: "2023-03-06"
 description: "This guide provides a comprehensive, step-by-step tutorial for setting up Hashicorp Vault on Openshift in High Availability mode, utilizing the integrated Raft storage system."
-tags: ["openshift", "redhat"]
+tags: ["openshift", "redhat","vault"]
 ShowToc: false
 ShowBreadCrumbs: false
 ---

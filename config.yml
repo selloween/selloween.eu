@@ -25,7 +25,7 @@ params:
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme:  dark #auto #light
-  disableThemeToggle: false
+  disableThemeToggle: true
 
   ShowReadingTime: true
   ShowShareButtons: true
@@ -54,7 +54,7 @@ params:
 
   label:
     text: "selloween.eu"
-    icon: /apple-touch-icon.png
+    #icon: /apple-touch-icon.png
     iconHeight: 35
 
   # profile-mode
@@ -75,7 +75,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: I'm Selwyn, a DevOps Engineer based near Vienna. This is my blog.
+    Content: "I'm Selwyn, a DevOps Engineer based near Vienna. Welcome to my blog, where I explore various DevOps and System Engineering topics, including but not limited to OpenShift/Kubernetes, CI/CD, Linux Administration, and other related subjects."
 
   socialIcons:
     #- name: twitter
@@ -86,14 +86,18 @@ params:
       url: "https://www.linkedin.com/in/selwyn-rogers-39a6b5274/"
     - name: github
       url: "https://github.com/selloween"
+    - name: linkedin
+      url: "https://linkedin.com"
+    - name: twitter
+      url: "https://twitter.com"
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
+  #analytics:
+  #  google:
+  #    SiteVerificationTag: "XYZabc"
+  #  bing:
+  #    SiteVerificationTag: "XYZabc"
+  #  yandex:
+  #    SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -117,10 +121,14 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
@@ -139,3 +147,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
