@@ -83,7 +83,7 @@ params:
         #- name: stackoverflow
       #  url: "https://stackoverflow.com"
     - name: linkedin
-      url: "https://www.linkedin.com/in/selwyn-rogers-mba-cmc-39a6b5274/"
+      url: "https://www.linkedin.com/in/selwyn-rogers-39a6b5274/"
     - name: github
       url: "https://github.com/selloween"
 
