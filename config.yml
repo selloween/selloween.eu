@@ -18,8 +18,8 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: selloween.eu
-  description: "A DevOps Engineer's Blog"
-  keywords: [Blog, Portfolio, PaperMod]
+  description: "Selwyn Rogers"
+  #keywords: [Blog, Portfolio, PaperMod]
   author: Selwyn Rogers
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
@@ -121,14 +121,14 @@ menu:
     #   name: categories
     #   url: /categories/
     #   weight: 10
-    - identifier: search
-      name: search
-      url: /search/
-      weight: 20
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
+    #- identifier: search
+    #  name: search
+    #  url: /search/
+    #  weight: 20
+    #- identifier: tags
+    #  name: tags
+    #  url: /tags/
+    #  weight: 20
    #- identifier: example
    #name: example.org
    #url: https://example.org
