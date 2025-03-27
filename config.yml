@@ -60,22 +60,22 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: "Selwyn Rogers, MBA, CMC"
+    title: "Selwyn Rogers"
     subtitle: "I'm Selwyn, a DevOps Engineer based in Vienna."
     imageUrl: "/img/profile.jpg"
     imageWidth: 230
     imageHeight: 230
     imageTitle: Profile image
-    buttons:
-      - name: Blog
-        url: posts
-      - name: Tags
-        url: tags
+    #buttons:
+    #  - name: Blog
+    #    url: posts
+    #  - name: Tags
+    #    url: tags
 
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: "I'm Selwyn, a DevOps Engineer based near Vienna. Welcome to my blog, where I explore various DevOps and System Engineering topics, including but not limited to OpenShift/Kubernetes, CI/CD, Linux Administration, and other related subjects."
+    Content: "I'm Selwyn, a DevOps and Platform Engineer based near Vienna."
 
   socialIcons:
     #- name: twitter
